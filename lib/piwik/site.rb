@@ -26,7 +26,7 @@ module Piwik
   # Furthermore, API methods are redefined as proxy_methods, 
   # allowing for ruby-friendlier names, default parameters and other nice things.
   class Site < Base
-    api_scope :referers
+    api_scope :referrers
     api_scope :visits, :class_name => 'VisitsSummary'
     api_scope :actions
     api_scope :transitions

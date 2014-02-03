@@ -1,7 +1,7 @@
 module Piwik
-  class Referers < ApiModule
+  class Referrers < ApiModule
     available_methods %W{
-      getRefererType
+      getReferrerType
       getKeywords
       getKeywordsForPageUrl
       getKeywordsForPageTitle
@@ -60,3 +60,6 @@ module Piwik
     end
   end
 end
+
+# alias new class name to old one for backwards-compatible API
+Piwik::Referers = Piwik::Referrers

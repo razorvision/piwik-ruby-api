@@ -61,8 +61,8 @@ describe 'Piwik::Site' do
     it { subject.outlink('http://mysite.com').exit_nb_visits.should eq(5) }
   end
   
-  describe '#referers' do
-    subject { build(:site).referers }
+  describe '#referrers' do
+    subject { build(:site).referrers }
     
     it { subject.websites.size.should eq(27) }
     it { subject.websites_count.should eq(27) }
