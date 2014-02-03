@@ -19,7 +19,7 @@ describe 'Piwik::Site' do
   describe 'with wrong id' do
     before {Piwik::SitesManager.stub(:call).with('SitesManager.getSiteFromId',{:idSite => 666}, /.*/, /.*/).and_return('<result>0</result>')}
     
-    xit { expect {Piwik::Site.load(666)}.to raise_error(Piwik::UnknownSite) }
+    xit { expect {Piwik::Site.load(666)}.to raise_error }
   end
   
   it { subject.seo_info.first['rank'].to_i.should eq(7) }
@@ -28,10 +28,10 @@ describe 'Piwik::Site' do
     subject { build(:site).annotations }
     
     it { subject.all.size.should eq(2) }
-    it { subject.update(1,{:pattern => 2}).should_not raise_error(Piwik::ApiError) }
-    it { subject.delete(1).should_not raise_error(Piwik::ApiError) }
+    it { subject.update(1,{:pattern => 2}).should_not raise_error }
+    it { subject.delete(1).should_not raise_error }
     it { subject.add(:name => 'test', :note => 'meah', :starred => 1).size.should eq(6) }
-    it { subject.count_for_dates.should_not raise_error(Piwik::ApiError) }
+    it { subject.count_for_dates.should_not raise_error }
     
   end
   
@@ -80,9 +80,9 @@ describe 'Piwik::Site' do
     
     it { subject.all.size.should eq(3) }
     it { subject.load(1).nb_conversions.should eq(82) }
-    it { subject.update(1,{:pattern => 2}).should_not raise_error(Piwik::ApiError) }
-    it { subject.delete(1).should_not raise_error(Piwik::ApiError) }
-    it { subject.add(:name => 'test', 'matchAttribute' => '/', :pattern => '/', :patternType => 1).should_not raise_error(Piwik::ApiError) }
+    it { subject.update(1,{:pattern => 2}).should_not raise_error }
+    it { subject.delete(1).should_not raise_error }
+    it { subject.add(:name => 'test', 'matchAttribute' => '/', :pattern => '/', :patternType => 1).should_not raise_error }
   end
   
   describe '#transitions' do

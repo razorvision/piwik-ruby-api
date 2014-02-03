@@ -43,7 +43,7 @@ end
 
 def assert_data_integrity method, options = {}
   it { puts subject.inspect } if options[:debug]
-  it { subject.send(method,params).should_not raise_error(NoMethodError) }
+  it { expect { subject.send(method,params) }.not_to raise_error }
   enum_class = defined?(Enumerator) ? 'Enumerator' : 'Enumerable::Enumerator'
   it { subject.send(method,params).each.should be_a(enum_class.constantize) }
   it { subject.send(method,params).empty?.should eq(false) }
@@ -54,7 +54,7 @@ end
 
 def assert_value_integrity method, options = {}
   it { puts subject.inspect } if options[:debug]
-  it { subject.send(method,params).should_not raise_error(NoMethodError) }
+  it { expect { subject.send(method,params) }.not_to raise_error }
   it { subject.send(method,params).empty?.should eq(false) }
   if options[:value].present?
     it { subject.send(method,params).value.should eq(options[:value]) }
