@@ -145,7 +145,7 @@ EOF
         url = "#{piwik_url}/index.php?"
         params.merge!({:module => 'API', :format => 'xml', :method => method})
         params.merge!({:token_auth => auth_token}) unless auth_token.nil?
-        url << params.map { |k, v| "#{k}=#{CGI.escape(v.to_s)}" }.join('&')
+        url << params.to_query
         verbose_obj_save = $VERBOSE
         $VERBOSE = nil # Suppress "warning: peer certificate won't be verified in this SSL session"
         xml = RestClient.get(url)
