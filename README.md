@@ -1,4 +1,4 @@
-# Autometal-Piwik [![Build Status](https://travis-ci.org/piwik/piwik-ruby-api.png?branch=master)](https://travis-ci.org/piwik/piwik-ruby-api)
+# Autometal-Piwik [![Build Status](https://travis-ci.org/piwik/piwik-ruby-api.png?branch=master)](https://travis-ci.org/piwik/piwik-ruby-api) [![Gem Version](https://badge.fury.io/rb/autometal-piwik.png)](http://badge.fury.io/rb/autometal-piwik)
 
 This is now the official Ruby client for Piwik. It completely covers the Piwik API and should be easily extendable by users. We made no assumptions on how you wanna use your data, so we closely mirrored Piwik's API structure even if it looks kinda weird to a modern rubyist.
 
@@ -32,7 +32,7 @@ Or install it yourself as:
 Open an extended irb session to a Piwik installation:
 
     $ piwik-console -u http://demo.piwik.org -t anonymous
-    :001 > Piwik::Site.load 7
+    :001 > Site.load 7
     #=> #<Piwik::Site[snip]>
 
 ### Initialize it
