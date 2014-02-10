@@ -8,7 +8,5 @@ module Piwik
       generateReport
       sendReport
     }
-    
-    
   end
 end

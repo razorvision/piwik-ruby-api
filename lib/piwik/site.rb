@@ -31,6 +31,7 @@ module Piwik
     api_scope :actions
     api_scope :transitions
     api_scope :annotations
+    api_scope :scheduled_reports
     api_scope :goals
     
     # Returns search engine information for site home

@@ -18,6 +18,7 @@ unless options.empty?
 IRB.conf[:AT_EXIT].push proc { exec("rm -f .piwik.rc.rb") }
 Piwik::PIWIK_URL = '#{options[:piwik_url]}'
 Piwik::PIWIK_TOKEN = '#{options[:token_auth]}'
+include Piwik
 }
 
   File.open('./.piwik.rc.rb','w') { |f| f.puts(code) }
