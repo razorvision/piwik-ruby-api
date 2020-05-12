@@ -24,9 +24,9 @@ module Piwik
     # the @obj instance variable is set in the api_scope call. This is not very clean or anything,
     # and I am still researching a better way to do it, 
     # but the Piwik::Site API is certainly much better to work with due to this
-    def self.scoped_methods &block
+    def self.scoped_methods(&block)
       if block_given?
-        extension =  Module.new(&Proc.new)
+        extension =  Module.new(&block)
         self.extend(extension)
       end
     end
