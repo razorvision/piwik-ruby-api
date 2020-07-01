@@ -13,6 +13,7 @@ require 'string'
   provider visit_frequency multi_sites mobile_messaging
   custom_variables languages_manager goals example_api api
   site user events custom_dimensions devices_detection
+  segment segment_editor
 }.each { |r| require "piwik/#{r}" }
 
 module Piwik
