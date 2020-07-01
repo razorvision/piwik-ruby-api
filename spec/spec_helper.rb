@@ -70,6 +70,13 @@ def build(object, attrs = {})
   when :site
     def_attrs = { :idsite => 1, :main_url => "http://test.local", :name => "Test Site" }
     Piwik::Site.new(def_attrs.merge(attrs))
+  when :segment
+    def_attrs = { idsegment: 5, name: "Custom Segment Five",
+                  definition: "referrerType==website", login: "john.doe",
+                  enable_all_users: 0, enable_only_idsite: 1, auto_archive: 0,
+                  ts_created: "2020-06-17 18:16:26",
+                  ts_last_edit: "2020-06-18 19:08:26", deleted: 0 }
+    Piwik::Segment.new(def_attrs.merge(attrs))
   end
 end
 

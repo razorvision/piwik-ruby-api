@@ -1,0 +1,14 @@
+<result>
+  <row>
+    <idsegment>5</idsegment>
+    <name>Custom Segment Five</name>
+    <definition>referrerType==website</definition>
+    <login>john.doe</login>
+    <enable_all_users>0</enable_all_users>
+    <enable_only_idsite>1</enable_only_idsite>
+    <auto_archive>0</auto_archive>
+    <ts_created>2020-06-17 18:16:26</ts_created>
+    <ts_last_edit>2020-06-18 19:08:26</ts_last_edit>
+    <deleted>0</deleted>
+  </row>
+</result>
