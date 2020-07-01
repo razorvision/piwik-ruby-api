@@ -1,3 +1,4 @@
+require 'rspec/its'
 require 'piwik'
 
 RSpec.configure do |config|
